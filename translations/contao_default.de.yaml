@@ -1,0 +1,40 @@
+CTE:
+  leafletmap:
+    - Leaflet Maps
+    - Erstellt eine Karte OpenStreetMap Kartenmaterial.
+
+tl_content:
+  leaflet_legend_content: Einstellungen
+  height:
+    - Höhe der Karte
+    - Geben Sie die Höhe der Karte ein. z.B. 80vh oder 500px.
+  zoom:
+    - Zoom
+    - Geben Sie die Zoomstufe der Karte ein. Standard ist 13.
+  coordlat:
+    - Latitude
+    - Geben Sie den Wert ein.
+  coordlong:
+    - Longitude
+    - Geben Sie den Wert ein.
+  coordlatcenter:
+    - Zentrierte Karte - Latitude
+    - Geben Sie den Wert ein. Bleibt das Feld leer, so wird der obere Werte herangezogen.
+  coordlongcenter:
+    - Zentrierte Karte - Longitude
+    - Geben Sie den Wert ein. Bleibt das Feld leer, so wird der obere Werte herangezogen.
+  coordpopup:
+    - Popup
+    - Geben Sie den Inhalt des Popups ein.
+  coords:
+    - Koordinaten
+    - Geben Sie weitere Koordinaten für die Marker ein.
+  latitude:
+    - Latitude
+    - Geben Sie den Wert ein.
+  longitude:
+    - Longitude
+    - Geben Sie den Wert ein.
+  popup:
+    - Popup
+    - Geben Sie den Inhalt des Popups ein.

@@ -1,0 +1,62 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+
+<div id="{{ mapid }}" style="height: {{ height }}; z-index: 1;"></div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+  (function() {
+    var centerLat = {{ coordlatcenter is not empty ? coordlatcenter : coordlat }};
+    var centerLng = {{ coordlongcenter is not empty ? coordlongcenter : coordlong }};
+    var zoom      = {{ zoom|default(13) }};
+
+    var map = L.map('{{ mapid }}', { scrollWheelZoom: false }).setView([centerLat, centerLng], zoom);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var locations = [];
+
+    // Start-Marker
+    locations.push({
+      coords: [{{ coordlat }}, {{ coordlong }}],
+      popupText: {{ coordpopup ? coordpopup|json_encode|raw : 'null' }}
+    });
+
+    // Weitere Marker (aus coords-Array)
+    {% if coords is iterable %}
+      {% for marker in coords %}
+        locations.push({
+          coords: [{{ marker.latitude|default('null') }}, {{ marker.longitude|default('null') }}],
+          popupText: {{ marker.popup is defined ? marker.popup|json_encode|raw : 'null' }}
+        });
+      {% endfor %}
+    {% endif %}
+
+    locations.forEach(function(loc) {
+      if (Array.isArray(loc.coords) && loc.coords[0] !== null && loc.coords[1] !== null) {
+        var m = L.marker(loc.coords).addTo(map);
+        if (loc.popupText) {
+          m.bindPopup(loc.popupText);
+        }
+      }
+    });
+
+    map.on('focus', function() { map.scrollWheelZoom.enable(); });
+    map.on('blur', function() { map.scrollWheelZoom.disable(); });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Shift') map.scrollWheelZoom.enable();
+    });
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'Shift') map.scrollWheelZoom.disable();
+    });
+  })();
+</script>
+
+{% endblock %}
