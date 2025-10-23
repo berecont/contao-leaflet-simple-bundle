@@ -1,1 +1,40 @@
+CTE:
+  leafletmap:
+    - Leaflet Maps
+    - Creates a map using OpenStreetMap tiles.
 
+tl_content:
+  leaflet_legend_content: Settings
+  height:
+    - Map height
+    - Enter the map height, e.g. 80vh or 500px.
+  zoom:
+    - Zoom
+    - Enter the map zoom level. Default is 13.
+  coordlat:
+    - Latitude
+    - Enter a value.
+  coordlong:
+    - Longitude
+    - Enter a value.
+  coordlatcenter:
+    - Centered map – latitude
+    - Enter a value. If left empty, the latitude above will be used.
+  coordlongcenter:
+    - Centered map – longitude
+    - Enter a value. If left empty, the longitude above will be used.
+  coordpopup:
+    - Popup
+    - Enter the popup content.
+  coords:
+    - Coordinates
+    - Add additional coordinates for markers.
+  latitude:
+    - Latitude
+    - Enter a value.
+  longitude:
+    - Longitude
+    - Enter a value.
+  popup:
+    - Popup
+    - Enter the popup content.
