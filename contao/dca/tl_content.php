@@ -7,7 +7,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['leafletmap'] =
   . '{leaflet_legend_content},height,zoom,coordlat,coordlong,coordlatcenter,coordlongcenter,coordpopup,coords;'
   . '{template_legend:hide},customTpl;'
   . '{protected_legend:hide},protected;'
-  . '{expert_legend:hide}cssID;' 
+  . '{expert_legend:hide},cssID;' 
   . '{invisible_legend:hide},invisible,start,stop'
 ;
 
