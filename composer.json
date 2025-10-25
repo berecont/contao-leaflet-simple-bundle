@@ -2,7 +2,6 @@
     "name": "berecont/contao-leaflet-simple-bundle",
     "description": "Leaflet map with one or more marker.",
     "license": "MIT",
-    "version": "1.0.0",
     "type": "contao-bundle",
     "authors": [
         {
